@@ -19,10 +19,12 @@ class CreateFaultLogTable extends Migration
             $table->text('machine_no');
             $table->date('log_date');
             $table->string('fault_code');
+            $table->bigInteger('fault_machine')->unsigned();
             $table->text('fault_description');
             $table->string('status');
             $table->timestamps();
-        });
+            $table->foreign('fault_machine')->references('id')->on('asset_detail')->onDelete('
+            cascade');        });
     }
 
     /**

@@ -15,7 +15,7 @@ class CreateAuditTrail extends Migration
     {
         Schema::create('audit_trail', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id');
+//            $table->string('user_id');
             $table->string('user_name');
             $table->string('table_name');
             $table->string('column_name');
